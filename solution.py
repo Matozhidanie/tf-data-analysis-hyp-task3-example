@@ -16,11 +16,12 @@ def solution(hist: np.array, new: np.array) -> bool: # Одна или две в
     # альтернатива p>p0
 
     # вычисления p-value етодом T-test 
-    result = stats.ttest_ind (a=hist, b=new, equal_var=False)
-
+    # result = stats.ttest_ind (a=hist, b=new, equal_var=False)
+    result = stats.mannwhitneyu(hist, new, use_continuity=True, alternative='less')
+    
     #print(result)
 
-    if (result.pvalue < uroven) and (result.statistic < 0):
+    if (result.pvalue < uroven):
         otvet = bool(1)
     else:
         otvet = bool(0)
