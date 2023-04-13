@@ -18,8 +18,8 @@ def solution(hist: np.array, new: np.array) -> bool: # Одна или две в
     # вычисления p-value етодом T-test 
     result = stats.ttest_ind (a=hist, b=new, equal_var=False, alternative='less')
 
-    print(result.statistic)
-    print(result.pvalue)
+    # print(result.statistic)
+    # print(result.pvalue)
 
     if (result.pvalue < uroven) and (result.statistic < 0):
         otvet = bool(1)
