@@ -16,7 +16,7 @@ def solution(hist: np.array, new: np.array) -> bool: # Одна или две в
     # альтернатива p>p0
 
     # вычисления p-value етодом T-test 
-    result = stats.ttest_ind (a=hist, b=new)
+    result = stats.ttest_ind (a=hist, b=new, equal_var=False)
 
     #print(result)
 
